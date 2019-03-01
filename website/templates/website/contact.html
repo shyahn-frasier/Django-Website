@@ -1,0 +1,112 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>SKF Productions</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="{% static '/docs/4.2/dist/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #3ED0DD">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="games.html">Games</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </body>
+
+<main role="main" class="container">
+
+  <div class="starter-template">
+        <h2 id="contact">Contact</h2>
+        <p class="contact text-center">Anyone looking to get in touch with me, the god among men, can reach me
+          by email or by phone. You probably know either or both if you are looking at this site.
+          I can't promise that I will be able to answer all of my fanmail, but I will try my best
+          to at least get through one...per year.
+        </p>
+        <img class="img-4" src="static/images/business-connection-contact-955081.jpg" alt="old phone on the wall">
+        <form method="POST">
+          {% csrf_token %}
+          <h2 class="form-h2 text-center">Enter Info Here!</h2>
+          <div class="form-group text-center">
+            <label class="form-name text-center" for="name">Name</label>
+          </div>
+          <div class="form-group text-center">
+            <input class="name-input" type="text" name="name" placeholder="Name" required>
+          </div>
+          <div class="form-group text-center">
+            <label class="form-contact-info text-center" for="contact-info">Phone Number</label>
+          </div>
+          <div class="form-group text-center">
+            <input class="contact-info-input" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="contact-info" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group text-center">
+            <label class="form-contact-info-format text-center" for="contact-info">Format: 123-456-7890</label>
+          </div>
+          <div class="form-group text-center">
+            <label class="form-message text-center" for="message">Message</label>
+          </div>
+          <div class="form-group text-center">
+            <textarea class="message" placeholder="Write your message here!" name="message" rows="3" cols="40"/>
+            </textarea>
+          </div>
+          <div class="form-group text-center">
+            <input class="submit-button" type="submit" value="Send">
+            <input class="reset-button" type="reset">
+          </div>
+        </form>
+  </div>
+  <footer>
+        <p class="footer-p text-center">This has been brought to you by SKF Productions</p>
+  </footer>
+
+</main><!-- /.container -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script></body>
+</html>
