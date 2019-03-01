@@ -1,21 +1,6 @@
 from django import forms
 from .models import Name, Phone_Number, Message
 
-#class NameForm(forms.Form):
-  #  class Meta:
-      #  model = Name
-      #  fields = ('text',)
-
-#class PhoneNumberForm(forms.ModelForm):
-  # class Meta:
-     #   model = Phone_Number
-     #   fields = ('text',)
-
-#class MessageForm(forms.ModelForm):
-    #class Meta:
-      #  model = Message
-       # fields = ('text',)
-
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=50)
     email = forms.EmailField(max_length=250)
