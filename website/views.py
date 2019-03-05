@@ -19,9 +19,7 @@ def contact(request):
             contact_info = form.save()
             contact_info.save()
             try:
-                email = EmailMessage(contact_info,
-                                    ['shyahn@321webmarketing.com'],
-                                    )
+                email = EmailMessage(contact_info,['shyahn@321webmarketing.com'],)
                 email.send()
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
