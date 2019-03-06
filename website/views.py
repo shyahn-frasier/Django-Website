@@ -22,7 +22,6 @@ def contact(request):
             phone = form.cleaned_data['number']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            from_email = settings.EMAIL_HOST_USER
             try:
                 email = EmailMessage(name, phone, email, message,['shyahn@321webmarketing.com'],)
                 email.send()
