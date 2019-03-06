@@ -13,16 +13,19 @@ def games(request):
     return render(request, 'website/games.html', {})
 
 def contact(request):
-    if request.method == "POST":
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact_info = form.save()
-            contact_info.save()
+            name = form.cleaned_data['name']
+            phone = form.cleaned_data['number']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            from_email = settings.EMAIL_HOST_USER
             try:
-                email = EmailMessage(contact_info,['shyahn@321webmarketing.com'],)
+                email = EmailMessage(name, phone, email, message,['shyahn@321webmarketing.com'],)
                 email.send()
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-    else:
-        form = ContactForm()
     return render(request, 'website/contact.html', {'form': form})
