@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #Email
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'shyahn@321webmarketing.com'
+EMAIL_HOST_PASSWORD = 'j0xoElDX4UR0a2tB'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
