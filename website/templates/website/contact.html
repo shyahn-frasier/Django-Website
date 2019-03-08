@@ -1,5 +1,5 @@
 {% load static %}
-{% load widget_tweaks %}
+{% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -76,7 +76,7 @@
           {% csrf_token %}
           <h2 class="form-h2 text-center">Enter Info Here!</h2>
           <div class="form-group text-center">
-            {{ form }}
+            {{ form|crispy }}
             <!--<label class="form-name text-center" for="name">Name</label>-->
           </div>
           <!--<div class="form-group text-center">
