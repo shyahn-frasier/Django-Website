@@ -22,6 +22,6 @@ class ContactForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Div(
-                Field('name'), css_class="form-group text-center form-contact-info"
+                Field('name'), css_class="form-contact-info"
             )
         )
