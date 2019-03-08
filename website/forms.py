@@ -3,6 +3,7 @@ from .models import Contact
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, Div
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
@@ -18,10 +19,12 @@ class ContactForm(forms.ModelForm):
             raise forms.ValidationError('You have to write something!')
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(ContactForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Div(
-                Field('name'), css_class="form-contact-info"
+                Field('name'), css_class="form-group col-md-4 mb-0 form-contact-info"
             )
         )
+        #self.helper.form_class = 'form-contact-info'
+        #self.helper.form_method = 'post'
