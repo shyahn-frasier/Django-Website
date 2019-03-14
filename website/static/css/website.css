@@ -273,6 +273,10 @@ nav li {
     font-size: 35px;
 }
 
+.col-md-4 {
+    justify-content: center
+}
+
 
 
 

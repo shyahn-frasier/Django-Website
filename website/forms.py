@@ -22,10 +22,10 @@ class ContactForm(forms.ModelForm):
         super(ContactForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.layout = Layout(
-                Field('name', css_class="form-group col-md-4 mb-0 form-contact-info"),
-                Field('number', css_class="form-group col-md-4 mb-0 form-contact-info"),
-                Field('email', css_class="form-group col-md-4 mb-0 form-contact-info"),
-                Field('message', css_class="form-group form-contact-info")
+                Field('name', css_class="form-group col-md-4 mb-0"),
+                Field('number', css_class="form-group col-md-4 mb-0"),
+                Field('email', css_class="form-group col-md-4 mb-0"),
+                Field('message', css_class="form-group")
         )
         #self.helper.form_class = 'form-contact-info'
         #self.helper.form_method = 'post'

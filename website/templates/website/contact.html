@@ -76,7 +76,7 @@
           {% csrf_token %}
           <h2 class="form-h2 text-center">Enter Info Here!</h2>
           <div class="form-group text-center">
-            {{ form|crispy }}
+            {% crispy form %}
             <!--<label class="form-name text-center" for="name">Name</label>-->
           </div>
           <!--<div class="form-group text-center">
