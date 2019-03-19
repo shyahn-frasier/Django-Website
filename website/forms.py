@@ -1,7 +1,7 @@
 from django import forms
 from .models import Contact
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, Div
+from crispy_forms.layout import Layout, Field, Div, Submit
 
 
 class ContactForm(forms.ModelForm):
@@ -21,11 +21,11 @@ class ContactForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ContactForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_method = 'POST'
         self.helper.layout = Layout(
-                Field('name', css_class="form-group col-md-4 mb-0"),
-                Field('number', css_class="form-group col-md-4 mb-0"),
-                Field('email', css_class="form-group col-md-4 mb-0"),
-                Field('message', css_class="form-group")
+                Field('name', css_class="form-group col-md-4 offset-md-4"),
+                Field('number', css_class="form-group col-md-4 offset-md-4"),
+                Field('email', css_class="form-group col-md-4 offset-md-4"),
+                Field('message', css_class="form-group"),
+                Submit('submit', 'Submit', css_class="btn btn-success"),
         )
-        #self.helper.form_class = 'form-contact-info'
-        self.helper.form_method = 'post'
